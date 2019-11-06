@@ -41,7 +41,15 @@ namespace media_functions_for_logic_app.functions
             TraceWriter log
             )
         {
-            JObject result = results.FirstOrDefault();
+            JObject result = null;
+            try
+            {
+                result = results.FirstOrDefault();
+            }
+            catch (Exception ex)
+            {
+                log.Info($"Error: {ex.Message} and key is not provided in MediaServicesAttachedStorageCredentials application settings");                
+            }
             
             return req.CreateResponse(HttpStatusCode.OK, result);
         }
