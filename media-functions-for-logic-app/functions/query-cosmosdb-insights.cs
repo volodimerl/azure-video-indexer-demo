@@ -41,7 +41,7 @@ namespace media_functions_for_logic_app.functions
             TraceWriter log
             )
         {
-            JObject result = results.First();
+            JObject result = results.FirstOrDefault();
             
             return req.CreateResponse(HttpStatusCode.OK, result);
         }
