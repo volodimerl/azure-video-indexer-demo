@@ -37,7 +37,7 @@ namespace media_functions_for_logic_app.functions
                 databaseName: "{dbname}",
                 collectionName: "{colname}",
                 ConnectionStringSetting = "CosmosDBConnectionString",
-                SqlQuery = "SELECT TOP 1 * from c WHERE c.insights[0].insights.transcript[0].instances[0].adjustedStart <= {starttime} ORDER BY c.insights[0].insights.transcript[0].instances[0].adjustedStart DESC")] IEnumerable<dynamic> results,
+                SqlQuery = "SELECT TOP 1 * from c WHERE c.insights[0].insights.labels[0].instances[0].adjustedStart <= {starttime} ORDER BY c.insights[0].insights.labels[0].instances[0].adjustedStart DESC")] IEnumerable<dynamic> results,
             TraceWriter log
             )
         {
